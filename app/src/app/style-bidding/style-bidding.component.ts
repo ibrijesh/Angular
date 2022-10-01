@@ -19,7 +19,7 @@ import { bufferToggle } from 'rxjs';
 
   <h2 [style.color]="highlightColor">Style Binding</h2>
 
-  <!-- using Ng style-->
+  <!-- using Ng style Directive by assigning object -->
   <h2 [ngStyle]="titleStyles">Style Binding</h2>
 
   

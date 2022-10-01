@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { ClassBindingComponent } from './class-binding/class-binding.component';
 import { StyleBiddingComponent } from './style-bidding/style-bidding.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { StyleBiddingComponent } from './style-bidding/style-bidding.component';
     PropertyBindingComponent,
     ClassBindingComponent,
     StyleBiddingComponent,
+    EventBindingComponent,
   ],
   imports: [
     BrowserModule,
