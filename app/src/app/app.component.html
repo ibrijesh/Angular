@@ -6,4 +6,13 @@
 <!-- <app-two-way-binding></app-two-way-binding> -->
 <!-- <app-ng-if></app-ng-if> -->
 <!-- <app-ng-switch></app-ng-switch> -->
-<app-ng-for></app-ng-for>
+<!-- <app-ng-for></app-ng-for> -->
+
+<div style="text-align: center;">
+    <h2>
+        Welcome {{title}}
+    </h2>
+</div>
+
+<!-- Using child selector component -->
+<app-component-interaction  [parentData]="name"></app-component-interaction>
