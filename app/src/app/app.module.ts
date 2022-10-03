@@ -12,6 +12,7 @@ import { StyleBiddingComponent } from './style-bidding/style-bidding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { NgIfComponent } from './ng-if/ng-if.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     EventBindingComponent,
     TemplateReferenceVariableComponent,
     TwoWayBindingComponent,
+    NgIfComponent,
   ],
   imports: [
     BrowserModule,
