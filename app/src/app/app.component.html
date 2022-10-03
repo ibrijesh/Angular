@@ -1,18 +1,7 @@
-<!-- <app-property-binding></app-property-binding> -->
-<!-- <app-class-binding></app-class-binding> -->
-<!-- <app-style-bidding></app-style-bidding> -->
-<!-- <app-event-binding></app-event-binding> -->
-<!-- <app-template-reference-variable></app-template-reference-variable> -->
-<!-- <app-two-way-binding></app-two-way-binding> -->
-<!-- <app-ng-if></app-ng-if> -->
-<!-- <app-ng-switch></app-ng-switch> -->
-<!-- <app-ng-for></app-ng-for> -->
-
 <div style="text-align: center;">
     <h2>
-        Welcome {{title}}
+         {{message}}
     </h2>
 </div>
 
-<!-- Using child selector component -->
-<app-component-interaction  [parentData]="name"></app-component-interaction>
+<app-component-interaction (childEvent)="message=$event" ></app-component-interaction>
