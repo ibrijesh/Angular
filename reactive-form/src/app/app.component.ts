@@ -20,4 +20,13 @@ export class AppComponent {
 
   });
 
+
+  loadApiData(){
+    this.registrationForm.patchValue({
+      userName:'Shah Rukh',
+      password:'test',
+      confirmPassword:'test'
+    })
+  }
+
 }
