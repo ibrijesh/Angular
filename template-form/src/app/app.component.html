@@ -13,6 +13,7 @@
       <div class="form-group" >
         <label>Name</label>
         <input type="text"  required #name="ngModel"  [class.is-invalid]="name.touched && name.invalid"   class="form-control" name="userName" [(ngModel)]="userModel.name" >
+        <small class="text-danger" [class.d-none]="name.untouched || name.valid">Name is required</small>
       </div>
 
       <div class="form-group" >
@@ -22,7 +23,15 @@
 
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel"  #phone="ngModel"  pattern="^\d{10}$"  [class.is-invalid]="phone.touched && phone.invalid"   class="form-control"  name="phone" [(ngModel)]="userModel.phone"> 
+        <input type="tel" required #phone="ngModel"  pattern="^\d{10}$"  [class.is-invalid]="phone.touched && phone.invalid"   class="form-control"  name="phone" [(ngModel)]="userModel.phone"> 
+        <!-- <small class="text-danger" [class.d-none]="phone.untouched || phone.valid">Phone number is required and must be of 10 digits</small> -->
+
+        <div *ngIf="phone.errors || (phone.touched || phone.invalid)">
+               <small class="text-danger" *ngIf="phone.errors?.['required']">Phone number is required</small>   
+               <small class="text-danger" *ngIf="phone.errors?.['pattern']">Phone number must be of 10 digits</small>  
+        </div>
+
+
       </div>
 
 
