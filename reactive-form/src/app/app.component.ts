@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms'
 import {FormBuilder,Validators} from '@angular/forms'
+import {forbiddenNameValidator} from './shared/user-name.validator'
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   }
 
   registrationForm=this.fb.group({
-    userName:['Vishwas',[Validators.required,Validators.minLength(3)]],
+    userName:['Vishwas',[Validators.required,Validators.minLength(3),forbiddenNameValidator(/password/)]],
     password:['test'],
     confirmPassword:['test'],
     address:this.fb.group({
