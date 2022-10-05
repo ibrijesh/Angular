@@ -10,6 +10,9 @@
 
       {{ userModel | json }}
 
+
+      {{userForm.form.valid}}
+
       <div class="form-group" >
         <label>Name</label>
         <input type="text"  required #name="ngModel"  [class.is-invalid]="name.touched && name.invalid"   class="form-control" name="userName" [(ngModel)]="userModel.name" >
@@ -36,11 +39,13 @@
 
 
       <div class="form-group">
-        <select class="custom-select" name="topic" [(ngModel)]="userModel.topic">
-          <option selected>I am interested in </option>
+        <select (blur)="validateTopic(topic.value)" (blur)="validateTopic(topic.value)"  [class.is-invalid]="topicHasError && topic.touched"  class="custom-select" #topic="ngModel" name="topic" [(ngModel)]="userModel.topic">
+          <option value="default"  selected >I am interested in </option>
           <option *ngFor="let topic of topics">{{topic}}</option>
+          <small class="text-danger" [class.d-none]="!topicHasError  || topic.untouched" >Please choose a topic</small>
         </select>
       </div>
+
 
       <div class="mb-3">
         <label >Time Preference</label>
@@ -61,7 +66,7 @@
         <label  class="form-check-label">Send me promotional offers</label>
       </div>
 
-      <button class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary"  [disabled]="userForm.form.invalid">Submit</button>
 
   </form>
 </div>

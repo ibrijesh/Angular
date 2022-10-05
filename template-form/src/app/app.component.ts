@@ -9,6 +9,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   topics=["Angular","React","Vue"]
 
-  userModel=new User('Brijesh',"brjesh@gmal.com",987654321,'','morninig',true);
+  topicHasError=true;
+
+  userModel=new User('Brijesh',"brjesh@gmal.com",9876543210,'','morninig',true);
+
+
+  validateTopic(value:any){
+      console.log(value);
+      
+      this.topicHasError=(value=='default')
+
+      console.log(this.topicHasError);
+      
+  }
 
 }
